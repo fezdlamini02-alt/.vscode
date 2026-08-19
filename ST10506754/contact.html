@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact - Fahrenheit Seafood and Grill</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <nav role="navigation" aria-label="Main navigation">
+      <a href="index.html">Home</a> |
+      <a href="about.html">About Us</a> |
+      <a href="services.html">Menu</a> |
+      <a href="gallery.html">Gallery</a> |
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Get In Touch</h2>
+    <p>Phone: +27 11 123 4567</p>
+    <p>Email: info@fahrenheitseafood.co.za</p>
+    <p>Address: Edenvale, Gauteng, South Africa</p>
+
+    <h3>Send Us a Message</h3>
+    <form id="contact-form" action="#" method="POST">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required aria-required="true"><br><br>
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required aria-required="true"><br><br>
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="4" required aria-required="true"></textarea><br><br>
+      <button type="submit" id="submit-btn">Send</button>
+    </form>
+    <div id="form-status" role="status" aria-live="polite"></div>
+    <!--
+      To activate form submissions, open `scripts.js` and set `FORM_ENDPOINT`
+      to your Formspree form endpoint (e.g. https://formspree.io/f/your-id).
+    -->
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Fahrenheit Seafood and Grill</p>
+  </footer>
+  <!-- CONTACT as last screen -->
+  <script src="scripts.js"></script>
+</body>
+</html>

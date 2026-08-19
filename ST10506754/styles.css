@@ -1,0 +1,25 @@
+/* Basic layout and responsive styles for Fahrenheit Seafood and Grill */
+:root{
+  --max-width: 1000px;
+  --accent:#c0392b;
+}
+body{font-family: Arial, Helvetica, sans-serif;line-height:1.5;margin:0;padding:0;color:#222}
+header{background:#f8f8f8;padding:16px 12px;border-bottom:1px solid #e6e6e6}
+header .container{display:flex;align-items:center;justify-content:space-between;gap:12px}
+header h1{margin:0;font-size:1.25rem}
+nav{font-size:0.95rem}
+nav a{color:#036; text-decoration:none;margin-right:8px}
+nav a:focus{outline:2px solid #036;outline-offset:2px}
+nav a[aria-current="page"]{font-weight:700}
+main{max-width:var(--max-width);margin:24px auto;padding:0 12px}
+footer{background:#f2f2f2;padding:12px;text-align:center;border-top:1px solid #e6e6e6}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.gallery img{width:100%;height:auto;display:block;border-radius:6px}
+.gallery img{transition:transform .25s ease,box-shadow .25s ease}
+.gallery img:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 8px 20px rgba(0,0,0,0.12)}
+form input,form textarea,form button{width:100%;max-width:600px}
+form input,form textarea{padding:8px;border:1px solid #ccc;border-radius:4px}
+form button{background:var(--accent);color:#fff;border:none;padding:10px 14px;margin-top:6px;border-radius:4px;cursor:pointer}
+form button:disabled{opacity:0.6;cursor:default}
+#form-status{margin-top:12px;font-weight:600}
+@media (min-width:700px){header h1{font-size:1.5rem}}
