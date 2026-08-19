@@ -1,57 +1,148 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
   <defs>
-    <linearGradient id="bgInterior" x1="0" x2="1">
-      <stop offset="0%" stop-color="#f4eadb"/>
-      <stop offset="50%" stop-color="#d7c3a7"/>
-      <stop offset="100%" stop-color="#8d6a4d"/>
+    <radialGradient id="interiorLighting" cx="30%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#fff9f0"/>
+      <stop offset="25%" stop-color="#f8ede0"/>
+      <stop offset="55%" stop-color="#ecddc8"/>
+      <stop offset="85%" stop-color="#8b6f47"/>
+      <stop offset="100%" stop-color="#2a1a0f"/>
+    </radialGradient>
+    <linearGradient id="wallTexture" x1="0" y1="0" x2="0.5" y2="0.5">
+      <stop offset="0%" stop-color="#faf6f0"/>
+      <stop offset="30%" stop-color="#f3ede4"/>
+      <stop offset="60%" stop-color="#ede5d9"/>
+      <stop offset="100%" stop-color="#e5d8c8"/>
     </linearGradient>
-    <linearGradient id="woodTone" x1="0" x2="1">
-      <stop offset="0%" stop-color="#6a3d2a"/>
-      <stop offset="100%" stop-color="#2f1f18"/>
+    <linearGradient id="floorGrain" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9b8567"/>
+      <stop offset="25%" stop-color="#7b6b52"/>
+      <stop offset="50%" stop-color="#6b5a45"/>
+      <stop offset="75%" stop-color="#5a4a38"/>
+      <stop offset="100%" stop-color="#3d2f20"/>
     </linearGradient>
+    <filter id="depthShadow">
+      <feDropShadow dx="0" dy="12" stdDeviation="8" flood-opacity="0.45" flood-color="#1a1410"/>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
+    </filter>
   </defs>
-
-  <rect width="1200" height="800" fill="url(#bgInterior)"/>
-  <g opacity="0.17" stroke="#5d4033" stroke-width="2">
-    <path d="M0 140h1200M0 660h1200"/>
-    <path d="M90 0v800M1110 0v800"/>
+  
+  <!-- Main atmospheric lighting -->
+  <rect width="1200" height="800" fill="url(#interiorLighting)"/>
+  
+  <!-- Upper wall with subtle color variation -->
+  <rect width="1200" height="480" fill="url(#wallTexture)"/>
+  <rect width="1200" height="480" fill="rgba(200, 180, 160, 0.08)"/>
+  
+  <!-- Lower wall / Floor transition -->
+  <rect y="480" width="1200" height="320" fill="url(#floorGrain)"/>
+  <rect y="480" width="1200" height="320" fill="rgba(50, 35, 20, 0.12)"/>
+  
+  <!-- Wood floor planks with grain detail -->
+  <g opacity="0.4" stroke="#4a3a2a" stroke-width="1">
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="0" y1="590" x2="1200" y2="590"/>
+    <line x1="0" y1="640" x2="1200" y2="640"/>
+    <line x1="0" y1="690" x2="1200" y2="690"/>
+    <line x1="0" y1="740" x2="1200" y2="740"/>
   </g>
-
-  <rect x="40" y="68" width="1120" height="660" rx="26" fill="rgba(104,76,58,0.12)" stroke="#6d4b37" stroke-width="4"/>
-
-  <g>
-    <rect x="120" y="115" width="960" height="410" rx="18" fill="#d4c09d" stroke="#7a593c" stroke-width="8"/>
-
-    <g fill="#f0e5d4" stroke="#7a593c" stroke-width="8">
-      <rect x="178" y="170" width="180" height="286" rx="8"/>
-      <rect x="510" y="170" width="180" height="286" rx="8"/>
-      <rect x="842" y="170" width="180" height="286" rx="8"/>
-    </g>
-
-    <g fill="#b57a4d" stroke="#5d3d2d" stroke-width="6">
-      <path d="M146 185h908v26H146zM146 415h908v24H146z"/>
-    </g>
-
-    <g>
-      <rect x="220" y="530" width="760" height="78" rx="12" fill="url(#woodTone)" stroke="#3d2a20" stroke-width="6"/>
-      <rect x="300" y="490" width="120" height="76" rx="14" fill="#f0e3cd" stroke="#7c5e3e" stroke-width="5"/>
-      <rect x="544" y="490" width="120" height="76" rx="14" fill="#f0e3cd" stroke="#7c5e3e" stroke-width="5"/>
-      <rect x="788" y="490" width="120" height="76" rx="14" fill="#f0e3cd" stroke="#7c5e3e" stroke-width="5"/>
-    </g>
-
-    <g fill="#d4b06d" stroke="#7d5c34" stroke-width="5">
-      <circle cx="600" cy="110" r="22"/>
-      <path d="M600 74v32M600 150v32M566 110h68M534 100l66 54M666 100l-66 54"/>
-    </g>
-
-    <g fill="#c1a96d" stroke="#7a5e31" stroke-width="4">
-      <path d="M300 208l30-20 30 20v128h-60zM900 208l30-20 30 20v128h-60z"/>
-    </g>
-
-    <g fill="none" stroke="#6d4a36" stroke-width="10" stroke-linecap="round">
-      <path d="M180 640c148-60 330-95 514-81 168 13 270 46 308 82"/>
-      <path d="M220 455c90 40 162 60 245 56"/>
-      <path d="M632 516c76 14 155 12 251-26"/>
-    </g>
+  
+  <!-- Fine wood grain texture -->
+  <g opacity="0.15" stroke="#3d2f1a" stroke-width="0.5">
+    <path d="M50 520L1150 525"/>
+    <path d="M40 570L1160 575"/>
+    <path d="M30 620L1170 625"/>
+    <path d="M20 670L1180 675"/>
   </g>
+  
+  <!-- Restaurant tables with realistic depth -->
+  <g filter="url(#depthShadow)">
+    <!-- Table 1 -->
+    <path d="M130 490Q280 470 420 490L430 680Q280 700 140 680Z" fill="#4a3a2a" opacity="0.9"/>
+    <path d="M140 495Q285 480 415 495L420 675Q285 690 145 675Z" fill="#7b6b52"/>
+    <ellipse cx="280" cy="585" rx="130" ry="80" fill="#9b8b72" opacity="0.85"/>
+    
+    <!-- Table 2 (center - larger) -->
+    <path d="M500 480Q700 440 900 480L920 690Q700 730 510 690Z" fill="#4a3a2a" opacity="0.9"/>
+    <path d="M510 485Q705 450 910 485L915 685Q705 720 515 685Z" fill="#7b6b52"/>
+    <ellipse cx="700" cy="585" rx="180" ry="95" fill="#9b8b72" opacity="0.85"/>
+    
+    <!-- Table 3 -->
+    <path d="M960 490Q1100 470 1220 490L1210 680Q1100 700 970 680Z" fill="#4a3a2a" opacity="0.9"/>
+    <path d="M970 495Q1105 480 1210 495L1205 675Q1105 690 975 675Z" fill="#7b6b52"/>
+    <ellipse cx="1090" cy="585" rx="130" ry="80" fill="#9b8b72" opacity="0.85"/>
+  </g>
+  
+  <!-- Fine dining place settings with depth -->
+  <g filter="url(#softGlow)">
+    <!-- Table 1 place settings -->
+    <circle cx="200" cy="540" r="32" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
+    <circle cx="200" cy="540" r="29" fill="#faf8f5"/>
+    <circle cx="370" cy="540" r="32" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
+    <circle cx="370" cy="540" r="29" fill="#faf8f5"/>
+    <circle cx="280" cy="650" r="32" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
+    <circle cx="280" cy="650" r="29" fill="#faf8f5"/>
+    
+    <!-- Table 2 place settings -->
+    <circle cx="560" cy="530" r="36" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
+    <circle cx="560" cy="530" r="33" fill="#faf8f5"/>
+    <circle cx="840" cy="530" r="36" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
+    <circle cx="840" cy="530" r="33" fill="#faf8f5"/>
+    <circle cx="700" cy="670" r="36" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
+    <circle cx="700" cy="670" r="33" fill="#faf8f5"/>
+    
+    <!-- Table 3 place settings -->
+    <circle cx="1040" cy="540" r="32" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
+    <circle cx="1040" cy="540" r="29" fill="#faf8f5"/>
+    <circle cx="1180" cy="540" r="32" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
+    <circle cx="1180" cy="540" r="29" fill="#faf8f5"/>
+    <circle cx="1110" cy="650" r="32" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
+    <circle cx="1110" cy="650" r="29" fill="#faf8f5"/>
+  </g>
+  
+  <!-- Upscale chair silhouettes with proper perspective -->
+  <g fill="#2a1f15" opacity="0.75">
+    <path d="M185 680Q195 665 215 665Q225 680 215 700Q195 705 185 700Z"/>
+    <path d="M365 680Q375 665 395 665Q405 680 395 700Q375 705 365 700Z"/>
+    <path d="M580 675Q595 655 625 655Q640 680 625 710Q595 715 580 710Z"/>
+    <path d="M780 675Q795 655 825 655Q840 680 825 710Q795 715 780 710Z"/>
+    <path d="M1015 680Q1025 665 1045 665Q1055 680 1045 700Q1025 705 1015 700Z"/>
+    <path d="M1180 680Q1190 665 1210 665Q1220 680 1210 700Q1190 705 1180 700Z"/>
+  </g>
+  
+  <!-- Warm ambient lighting from chandeliers -->
+  <g filter="drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4))">
+    <!-- Chandelier 1 -->
+    <circle cx="300" cy="80" r="22" fill="#d4a870"/>
+    <circle cx="300" cy="80" r="16" fill="#fff8dc" opacity="0.65"/>
+    <ellipse cx="300" cy="82" rx="10" ry="8" fill="#ffeaa7" opacity="0.4"/>
+    <line x1="300" y1="102" x2="300" y2="180" stroke="#3a2a1f" stroke-width="3" opacity="0.8"/>
+    
+    <!-- Chandelier 2 -->
+    <circle cx="700" cy="65" r="24" fill="#d4a870"/>
+    <circle cx="700" cy="65" r="18" fill="#fff8dc" opacity="0.65"/>
+    <ellipse cx="700" cy="67" rx="12" ry="9" fill="#ffeaa7" opacity="0.4"/>
+    <line x1="700" y1="89" x2="700" y2="180" stroke="#3a2a1f" stroke-width="3" opacity="0.8"/>
+    
+    <!-- Chandelier 3 -->
+    <circle cx="1100" cy="80" r="22" fill="#d4a870"/>
+    <circle cx="1100" cy="80" r="16" fill="#fff8dc" opacity="0.65"/>
+    <ellipse cx="1100" cy="82" rx="10" ry="8" fill="#ffeaa7" opacity="0.4"/>
+    <line x1="1100" y1="102" x2="1100" y2="180" stroke="#3a2a1f" stroke-width="3" opacity="0.8"/>
+  </g>
+  
+  <!-- Wall sconce lights -->
+  <g filter="drop-shadow(0 5px 8px rgba(0, 0, 0, 0.35))">
+    <circle cx="80" cy="320" r="14" fill="#c9a870" opacity="0.85"/>
+    <circle cx="80" cy="320" r="10" fill="#ffeaa7" opacity="0.5"/>
+    <circle cx="1120" cy="300" r="14" fill="#c9a870" opacity="0.85"/>
+    <circle cx="1120" cy="300" r="10" fill="#ffeaa7" opacity="0.5"/>
+  </g>
+  
+  <!-- Subtle atmospheric haze for depth -->
+  <rect width="1200" height="800" fill="url(#interiorLighting)" opacity="0.08"/>
+  
+  <!-- Fine texture overlay -->
+  <rect width="1200" height="800" fill="rgba(0, 0, 0, 0.05)"/>
 </svg>

@@ -1,60 +1,127 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
   <defs>
-    <linearGradient id="bgSalmon" x1="0" x2="1">
-      <stop offset="0%" stop-color="#efe4d2"/>
-      <stop offset="50%" stop-color="#d9b68d"/>
-      <stop offset="100%" stop-color="#7d4d2f"/>
+    <radialGradient id="plateFinish" cx="48%" cy="38%" r="62%">
+      <stop offset="0%" stop-color="#fffef9"/>
+      <stop offset="32%" stop-color="#faf6f0"/>
+      <stop offset="68%" stop-color="#f2ebe2"/>
+      <stop offset="100%" stop-color="#d9cbb5"/>
+    </radialGradient>
+    <linearGradient id="salmonCooked" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff8856"/>
+      <stop offset="18%" stop-color="#f77a48"/>
+      <stop offset="38%" stop-color="#e66938"/>
+      <stop offset="62%" stop-color="#d45028"/>
+      <stop offset="80%" stop-color="#b83f1f"/>
+      <stop offset="100%" stop-color="#8a2f15"/>
     </linearGradient>
-    <linearGradient id="salmonFillet" x1="0" x2="1">
-      <stop offset="0%" stop-color="#f7a66b"/>
-      <stop offset="40%" stop-color="#cf6736"/>
-      <stop offset="100%" stop-color="#9f3e2a"/>
+    <linearGradient id="asparagusRealistic" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5a7c2a"/>
+      <stop offset="50%" stop-color="#3d5a1f"/>
+      <stop offset="100%" stop-color="#2a4014"/>
     </linearGradient>
+    <filter id="foodDepth">
+      <feDropShadow dx="0" dy="20" stdDeviation="14" flood-opacity="0.48" flood-color="#1a1410"/>
+    </filter>
   </defs>
 
-  <rect width="1200" height="800" fill="url(#bgSalmon)"/>
-  <g opacity="0.14" stroke="#502d1f" stroke-width="2">
-    <path d="M60 115h1080M60 685h1080"/>
-    <path d="M120 70v660M1080 70v660"/>
+  <!-- Professional food photography background -->
+  <rect width="1200" height="800" fill="#faf6f0"/>
+
+  <!-- Plate shadow -->
+  <ellipse cx="600" cy="525" rx="365" ry="140" fill="#3a2a1a" opacity="0.30"/>
+  <ellipse cx="600" cy="520" rx="345" ry="115" fill="#5a4a3a" opacity="0.14"/>
+
+  <!-- Premium ceramic plate -->
+  <circle cx="600" cy="380" r="315" fill="#fffef9" stroke="#e5d7c3" stroke-width="6"/>
+  <circle cx="600" cy="380" r="308" fill="url(#plateFinish)"/>
+  <circle cx="600" cy="380" r="315" fill="none" stroke="#f0e8dc" stroke-width="14" opacity="0.35"/>
+
+  <!-- Grilled salmon fillet - restaurant quality -->
+  <g filter="url(#foodDepth)">
+    <!-- Main salmon flesh -->
+    <path d="M340 410c5-95 110-170 240-180 130-10 228 55 245 155 17 100-45 170-155 180-110 10-300-40-330-155z" 
+          fill="url(#salmonCooked)" stroke="#7a3a2a" stroke-width="5" opacity="0.97"/>
+    
+    <!-- Cooked salmon surface -->
+    <ellipse cx="600" cy="355" rx="210" ry="70" fill="rgba(255, 140, 86, 0.45)" opacity="0.65"/>
+    
+    <!-- Realistic grill marks -->
+    <g stroke="#8a3a2a" stroke-width="3.5" opacity="0.42" stroke-linecap="round">
+      <path d="M410 360L630 435"/>
+      <path d="M420 348L640 425"/>
+      <path d="M400 385L620 455"/>
+      <path d="M390 410L610 480"/>
+      <path d="M410 450L630 520"/>
+    </g>
+    
+    <!-- Salmon muscle tones -->
+    <path d="M460 375Q570 345 710 390Q680 435 570 455Q490 440 460 375Z" fill="#d85a38" opacity="0.35"/>
+    <path d="M490 420Q600 405 730 460Q710 495 600 510Q520 485 490 420Z" fill="#c44a28" opacity="0.28"/>
+    
+    <!-- Salmon skin edge -->
+    <path d="M365 430c65-25 195-38 260-15 35 12 45 28 38 42-7 14-38 10-70 2" 
+          fill="none" stroke="#a8442a" stroke-width="2.5" opacity="0.35"/>
   </g>
 
-  <rect x="100" y="100" width="1000" height="600" rx="28" fill="rgba(88,50,31,0.14)" stroke="#6f4735" stroke-width="4"/>
+  <!-- Fresh asparagus spears -->
+  <g filter="url(#foodDepth)">
+    <!-- Left bundle -->
+    <path d="M330 490Q325 560 318 630" stroke="url(#asparagusRealistic)" stroke-width="13" stroke-linecap="round"/>
+    <path d="M330 490Q325 560 318 630" stroke="#6a9a3a" stroke-width="10" opacity="0.85" stroke-linecap="round"/>
+    <path d="M330 490Q325 560 318 630" stroke="#7aaa4a" stroke-width="7" opacity="0.55" stroke-linecap="round"/>
+    
+    <path d="M375 500Q372 565 365 640" stroke="url(#asparagusRealistic)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M375 500Q372 565 365 640" stroke="#6a9a3a" stroke-width="9" opacity="0.85" stroke-linecap="round"/>
+    
+    <path d="M420 495Q418 560 415 630" stroke="url(#asparagusRealistic)" stroke-width="11" stroke-linecap="round"/>
+    <path d="M420 495Q418 560 415 630" stroke="#6a9a3a" stroke-width="8" opacity="0.85" stroke-linecap="round"/>
+    
+    <!-- Right bundle -->
+    <path d="M820 480Q835 550 850 620" stroke="url(#asparagusRealistic)" stroke-width="13" stroke-linecap="round"/>
+    <path d="M820 480Q835 550 850 620" stroke="#6a9a3a" stroke-width="10" opacity="0.85" stroke-linecap="round"/>
+    <path d="M820 480Q835 550 850 620" stroke="#7aaa4a" stroke-width="7" opacity="0.55" stroke-linecap="round"/>
+    
+    <path d="M865 495Q882 560 900 635" stroke="url(#asparagusRealistic)" stroke-width="12" stroke-linecap="round"/>
+    <path d="M865 495Q882 560 900 635" stroke="#6a9a3a" stroke-width="9" opacity="0.85" stroke-linecap="round"/>
+  </g>
 
-  <g>
-    <ellipse cx="600" cy="554" rx="235" ry="80" fill="#6e412d" opacity="0.35"/>
-    <ellipse cx="600" cy="405" rx="355" ry="215" fill="#f5efe8" stroke="#8c6a48" stroke-width="12"/>
-    <ellipse cx="600" cy="405" rx="290" ry="165" fill="#f3e6d7"/>
-
-    <g transform="translate(0 10)">
-      <path d="M374 430c54-130 224-174 345-100 87 53 111 178 37 241-81 71-294 61-382-17-34-30-32-77 0-124z" fill="url(#salmonFillet)" stroke="#7a3527" stroke-width="8"/>
-      <path d="M480 385c20-54 82-90 149-86 74 5 126 53 139 118" fill="none" stroke="#f4dec9" stroke-width="14" stroke-linecap="round" opacity="0.8"/>
-      <path d="M540 492c55-13 88-38 109-74" fill="none" stroke="#8f3a2b" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
-      <path d="M365 393c29 6 94 14 135 74" fill="none" stroke="#8f3a2b" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
-      <path d="M749 367c-17 28-32 60-48 94" fill="none" stroke="#8f3a2b" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+  <!-- Fresh lemon garnish -->
+  <g filter="url(#foodDepth)">
+    <circle cx="480" cy="335" r="32" fill="#ffed4e"/>
+    <circle cx="480" cy="335" r="29" fill="#fef97f"/>
+    <circle cx="480" cy="335" r="27" fill="#fff5a0" opacity="0.75"/>
+    <g stroke="#f4d000" stroke-width="1.8" opacity="0.65">
+      <line x1="480" y1="303" x2="480" y2="367"/>
+      <line x1="448" y1="335" x2="512" y2="335"/>
+      <line x1="458" y1="313" x2="502" y2="357"/>
+      <line x1="502" y1="313" x2="458" y2="357"/>
     </g>
-
-    <g fill="#b2c96d" stroke="#4a5d2d" stroke-width="4">
-      <path d="M450 292c18-35 63-48 95-26 34 22 36 64 9 88-35 31-92 19-104-62z"/>
-      <path d="M695 308c15-28 53-43 85-30 31 13 42 47 26 72-21 32-68 44-95 15-18-19-23-37-16-57z"/>
-      <path d="M590 272c18-34 65-51 97-31 28 17 40 58 20 87-29 42-93 42-116-8-7-15-8-30-1-48z"/>
-    </g>
-
-    <g fill="#ebd66d" stroke="#a97a2a" stroke-width="4">
-      <circle cx="472" cy="474" r="17"/>
-      <circle cx="731" cy="490" r="16"/>
-      <circle cx="619" cy="519" r="16"/>
-      <circle cx="526" cy="548" r="14"/>
-    </g>
-
-    <g fill="#d9b57e" stroke="#8d6a45" stroke-width="5">
-      <path d="M405 312l34-100 40 33-17 67z"/>
-      <path d="M756 316l-35-104-38 35 17 69z"/>
-    </g>
-
-    <g fill="none" stroke="#5e3e2d" stroke-width="10" stroke-linecap="round">
-      <path d="M300 456c52 35 94 52 153 64"/>
-      <path d="M812 451c34 17 75 32 112 39"/>
-      <path d="M440 620c84-19 151-22 218-6"/>
+    
+    <circle cx="750" cy="320" r="30" fill="#ffed4e"/>
+    <circle cx="750" cy="320" r="27" fill="#fef97f"/>
+    <circle cx="750" cy="320" r="25" fill="#fff5a0" opacity="0.75"/>
+    <g stroke="#f4d000" stroke-width="1.8" opacity="0.65">
+      <line x1="750" y1="290" x2="750" y2="350"/>
+      <line x1="720" y1="320" x2="780" y2="320"/>
     </g>
   </g>
+
+  <!-- Microgreens/herbs - fine dining detail -->
+  <g filter="url(#foodDepth)">
+    <path d="M610 310c12-28 25-20 35 6 10 26 2 48-12 50-14 2-32-14-36-32-4-22 8-34 13-24" 
+          fill="#2d5a1a" opacity="0.88"/>
+    <path d="M660 350c9-22 20-18 28 3 8 21 0 40-10 41-10 1-26-12-28-28-2-18 5-26 10-16" 
+          fill="#2d5a1a" opacity="0.83"/>
+  </g>
+
+  <!-- Sauce accent -->
+  <g filter="url(#foodDepth)">
+    <path d="M760 500c18-10 28-6 33 8" fill="none" stroke="#c44a28" stroke-width="3.5" opacity="0.32" stroke-linecap="round"/>
+  </g>
+
+  <!-- Plate surface reflection -->
+  <ellipse cx="600" cy="365" rx="290" ry="85" fill="rgba(255, 255, 255, 0.14)" opacity="0.5"/>
+
+  <!-- Fine atmospheric overlay -->
+  <rect width="1200" height="800" fill="rgba(0, 0, 0, 0.05)"/>
 </svg>
