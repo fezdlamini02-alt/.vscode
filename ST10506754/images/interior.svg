@@ -1,148 +1,104 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="titleDesc">
+  <title id="titleDesc">Stylized interior scene with window, plant, lamp, chair and rug</title>
   <defs>
-    <radialGradient id="interiorLighting" cx="30%" cy="20%" r="70%">
-      <stop offset="0%" stop-color="#fff9f0"/>
-      <stop offset="25%" stop-color="#f8ede0"/>
-      <stop offset="55%" stop-color="#ecddc8"/>
-      <stop offset="85%" stop-color="#8b6f47"/>
-      <stop offset="100%" stop-color="#2a1a0f"/>
-    </radialGradient>
-    <linearGradient id="wallTexture" x1="0" y1="0" x2="0.5" y2="0.5">
-      <stop offset="0%" stop-color="#faf6f0"/>
-      <stop offset="30%" stop-color="#f3ede4"/>
-      <stop offset="60%" stop-color="#ede5d9"/>
-      <stop offset="100%" stop-color="#e5d8c8"/>
+    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f6f9fc"/>
+      <stop offset="100%" stop-color="#e7eef6"/>
     </linearGradient>
-    <linearGradient id="floorGrain" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#9b8567"/>
-      <stop offset="25%" stop-color="#7b6b52"/>
-      <stop offset="50%" stop-color="#6b5a45"/>
-      <stop offset="75%" stop-color="#5a4a38"/>
-      <stop offset="100%" stop-color="#3d2f20"/>
+    <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e9d8c4"/>
+      <stop offset="100%" stop-color="#d4b79a"/>
     </linearGradient>
-    <filter id="depthShadow">
-      <feDropShadow dx="0" dy="12" stdDeviation="8" flood-opacity="0.45" flood-color="#1a1410"/>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#88d0ff"/>
+      <stop offset="100%" stop-color="#cfeaff"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#bfe6ff" stop-opacity="0.15"/>
+    </linearGradient>
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#000" flood-opacity="0.12"/>
     </filter>
-    <filter id="softGlow">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5"/>
-    </filter>
+    <clipPath id="windowClip">
+      <rect x="760" y="110" width="280" height="380" rx="8" ry="8"/>
+    </clipPath>
   </defs>
-  
-  <!-- Main atmospheric lighting -->
-  <rect width="1200" height="800" fill="url(#interiorLighting)"/>
-  
-  <!-- Upper wall with subtle color variation -->
-  <rect width="1200" height="480" fill="url(#wallTexture)"/>
-  <rect width="1200" height="480" fill="rgba(200, 180, 160, 0.08)"/>
-  
-  <!-- Lower wall / Floor transition -->
-  <rect y="480" width="1200" height="320" fill="url(#floorGrain)"/>
-  <rect y="480" width="1200" height="320" fill="rgba(50, 35, 20, 0.12)"/>
-  
-  <!-- Wood floor planks with grain detail -->
-  <g opacity="0.4" stroke="#4a3a2a" stroke-width="1">
-    <line x1="0" y1="540" x2="1200" y2="540"/>
-    <line x1="0" y1="590" x2="1200" y2="590"/>
-    <line x1="0" y1="640" x2="1200" y2="640"/>
-    <line x1="0" y1="690" x2="1200" y2="690"/>
-    <line x1="0" y1="740" x2="1200" y2="740"/>
+
+  <!-- Background wall -->
+  <rect width="1200" height="520" y="0" fill="url(#wallGrad)" />
+  <!-- Floor -->
+  <rect width="1200" height="280" y="520" fill="url(#floorGrad)" />
+
+  <!-- Window -->
+  <g filter="url(#softShadow)">
+    <rect x="760" y="110" width="280" height="380" rx="8" ry="8" fill="#fff" stroke="#d0e6ff" stroke-width="6" />
+    <rect x="772" y="130" width="256" height="344" fill="url(#sky)" clip-path="url(#windowClip)"/>
+    <!-- window panes -->
+    <line x1="900" y1="130" x2="900" y2="474" stroke="#ffffff" stroke-opacity="0.4" stroke-width="3" />
+    <line x1="772" y1="312" x2="1028" y2="312" stroke="#ffffff" stroke-opacity="0.3" stroke-width="3" />
+    <!-- glass reflection -->
+    <path d="M792 150 C900 170 980 150 995 200" fill="none" stroke="url(#glass)" stroke-width="18" stroke-linecap="round" stroke-opacity="0.35"/>
   </g>
-  
-  <!-- Fine wood grain texture -->
-  <g opacity="0.15" stroke="#3d2f1a" stroke-width="0.5">
-    <path d="M50 520L1150 525"/>
-    <path d="M40 570L1160 575"/>
-    <path d="M30 620L1170 625"/>
-    <path d="M20 670L1180 675"/>
+
+  <!-- Sun beam from window -->
+  <path d="M820 150 L640 440 L640 520 L900 520 L900 380 Z" fill="#fff3b8" opacity="0.12" />
+
+  <!-- Rug -->
+  <ellipse cx="420" cy="640" rx="260" ry="70" fill="#ffefd5" stroke="#f2d7b0" stroke-width="2" />
+  <ellipse cx="420" cy="642" rx="180" ry="38" fill="#ffd6b8" opacity="0.5" />
+
+  <!-- Chair -->
+  <g transform="translate(300,520)">
+    <rect x="-40" y="-120" width="160" height="24" rx="8" fill="#6b4f3a" /> <!-- seat cushion front -->
+    <rect x="-30" y="-148" width="140" height="60" rx="14" fill="#8b6a52" /> <!-- backrest -->
+    <rect x="-48" y="-100" width="16" height="80" rx="4" fill="#5a3f2b" />
+    <rect x="116" y="-100" width="16" height="80" rx="4" fill="#5a3f2b" />
+    <rect x="0" y="-40" width="40" height="56" rx="8" transform="rotate(10 20  -12)" fill="#a47b60" opacity="0.9" />
   </g>
-  
-  <!-- Restaurant tables with realistic depth -->
-  <g filter="url(#depthShadow)">
-    <!-- Table 1 -->
-    <path d="M130 490Q280 470 420 490L430 680Q280 700 140 680Z" fill="#4a3a2a" opacity="0.9"/>
-    <path d="M140 495Q285 480 415 495L420 675Q285 690 145 675Z" fill="#7b6b52"/>
-    <ellipse cx="280" cy="585" rx="130" ry="80" fill="#9b8b72" opacity="0.85"/>
-    
-    <!-- Table 2 (center - larger) -->
-    <path d="M500 480Q700 440 900 480L920 690Q700 730 510 690Z" fill="#4a3a2a" opacity="0.9"/>
-    <path d="M510 485Q705 450 910 485L915 685Q705 720 515 685Z" fill="#7b6b52"/>
-    <ellipse cx="700" cy="585" rx="180" ry="95" fill="#9b8b72" opacity="0.85"/>
-    
-    <!-- Table 3 -->
-    <path d="M960 490Q1100 470 1220 490L1210 680Q1100 700 970 680Z" fill="#4a3a2a" opacity="0.9"/>
-    <path d="M970 495Q1105 480 1210 495L1205 675Q1105 690 975 675Z" fill="#7b6b52"/>
-    <ellipse cx="1090" cy="585" rx="130" ry="80" fill="#9b8b72" opacity="0.85"/>
+
+  <!-- Side table -->
+  <g transform="translate(500,540)">
+    <rect x="0" y="-60" width="80" height="60" rx="10" fill="#7a5a43" filter="url(#softShadow)" />
+    <rect x="10" y="-50" width="60" height="6" rx="3" fill="#e8d7c7" />
+    <!-- vase -->
+    <ellipse cx="20" cy="-56" rx="12" ry="6" fill="#f7f0ec" opacity="0.9" />
+    <rect x="12" y="-92" width="16" height="36" rx="8" fill="#e8b9b0" />
   </g>
-  
-  <!-- Fine dining place settings with depth -->
-  <g filter="url(#softGlow)">
-    <!-- Table 1 place settings -->
-    <circle cx="200" cy="540" r="32" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
-    <circle cx="200" cy="540" r="29" fill="#faf8f5"/>
-    <circle cx="370" cy="540" r="32" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
-    <circle cx="370" cy="540" r="29" fill="#faf8f5"/>
-    <circle cx="280" cy="650" r="32" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
-    <circle cx="280" cy="650" r="29" fill="#faf8f5"/>
-    
-    <!-- Table 2 place settings -->
-    <circle cx="560" cy="530" r="36" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
-    <circle cx="560" cy="530" r="33" fill="#faf8f5"/>
-    <circle cx="840" cy="530" r="36" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
-    <circle cx="840" cy="530" r="33" fill="#faf8f5"/>
-    <circle cx="700" cy="670" r="36" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
-    <circle cx="700" cy="670" r="33" fill="#faf8f5"/>
-    
-    <!-- Table 3 place settings -->
-    <circle cx="1040" cy="540" r="32" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
-    <circle cx="1040" cy="540" r="29" fill="#faf8f5"/>
-    <circle cx="1180" cy="540" r="32" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
-    <circle cx="1180" cy="540" r="29" fill="#faf8f5"/>
-    <circle cx="1110" cy="650" r="32" fill="#f8f5f0" stroke="#e0ddd5" stroke-width="2"/>
-    <circle cx="1110" cy="650" r="29" fill="#faf8f5"/>
+
+  <!-- Plant -->
+  <g transform="translate(560,540)">
+    <ellipse cx="0" cy="-6" rx="46" ry="18" fill="#a27f54" />
+    <rect x="-40" y="-110" width="80" height="104" rx="12" fill="#caa27a" />
+    <!-- leaves -->
+    <path d="M-10 -56 C-60 -80 -20 -120 20 -100 C40 -90 36 -60 10 -52 C-2 -48 -6 -50 -10 -56Z" fill="#2f8f5a" />
+    <path d="M12 -30 C60 -60 40 -110 4 -84 C-8 -74 -6 -54 12 -30Z" fill="#3aa06a" opacity="0.95" />
   </g>
-  
-  <!-- Upscale chair silhouettes with proper perspective -->
-  <g fill="#2a1f15" opacity="0.75">
-    <path d="M185 680Q195 665 215 665Q225 680 215 700Q195 705 185 700Z"/>
-    <path d="M365 680Q375 665 395 665Q405 680 395 700Q375 705 365 700Z"/>
-    <path d="M580 675Q595 655 625 655Q640 680 625 710Q595 715 580 710Z"/>
-    <path d="M780 675Q795 655 825 655Q840 680 825 710Q795 715 780 710Z"/>
-    <path d="M1015 680Q1025 665 1045 665Q1055 680 1045 700Q1025 705 1015 700Z"/>
-    <path d="M1180 680Q1190 665 1210 665Q1220 680 1210 700Q1190 705 1180 700Z"/>
+
+  <!-- Floorboard subtle lines -->
+  <g stroke="#d7b99a" stroke-width="2" opacity="0.3">
+    <line x1="0" y1="580" x2="1200" y2="580" />
+    <line x1="0" y1="620" x2="1200" y2="620" />
+    <line x1="0" y1="700" x2="1200" y2="700" />
   </g>
-  
-  <!-- Warm ambient lighting from chandeliers -->
-  <g filter="drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4))">
-    <!-- Chandelier 1 -->
-    <circle cx="300" cy="80" r="22" fill="#d4a870"/>
-    <circle cx="300" cy="80" r="16" fill="#fff8dc" opacity="0.65"/>
-    <ellipse cx="300" cy="82" rx="10" ry="8" fill="#ffeaa7" opacity="0.4"/>
-    <line x1="300" y1="102" x2="300" y2="180" stroke="#3a2a1f" stroke-width="3" opacity="0.8"/>
-    
-    <!-- Chandelier 2 -->
-    <circle cx="700" cy="65" r="24" fill="#d4a870"/>
-    <circle cx="700" cy="65" r="18" fill="#fff8dc" opacity="0.65"/>
-    <ellipse cx="700" cy="67" rx="12" ry="9" fill="#ffeaa7" opacity="0.4"/>
-    <line x1="700" y1="89" x2="700" y2="180" stroke="#3a2a1f" stroke-width="3" opacity="0.8"/>
-    
-    <!-- Chandelier 3 -->
-    <circle cx="1100" cy="80" r="22" fill="#d4a870"/>
-    <circle cx="1100" cy="80" r="16" fill="#fff8dc" opacity="0.65"/>
-    <ellipse cx="1100" cy="82" rx="10" ry="8" fill="#ffeaa7" opacity="0.4"/>
-    <line x1="1100" y1="102" x2="1100" y2="180" stroke="#3a2a1f" stroke-width="3" opacity="0.8"/>
+
+  <!-- Standing lamp -->
+  <g transform="translate(170,420)">
+    <rect x="18" y="-240" width="8" height="200" rx="4" fill="#4b3930" />
+    <ellipse cx="26" cy="-38" rx="30" ry="12" fill="#fde7b8" opacity="0.9" />
+    <path d="M-10 -240 Q26 -280 62 -240 L52 -216 Q26 -252 -10 -216 Z" fill="#ffdca8" opacity="0.95" />
+    <!-- light glow -->
+    <ellipse cx="26" cy="-20" rx="140" ry="80" fill="#fff2c2" opacity="0.08" />
   </g>
-  
-  <!-- Wall sconce lights -->
-  <g filter="drop-shadow(0 5px 8px rgba(0, 0, 0, 0.35))">
-    <circle cx="80" cy="320" r="14" fill="#c9a870" opacity="0.85"/>
-    <circle cx="80" cy="320" r="10" fill="#ffeaa7" opacity="0.5"/>
-    <circle cx="1120" cy="300" r="14" fill="#c9a870" opacity="0.85"/>
-    <circle cx="1120" cy="300" r="10" fill="#ffeaa7" opacity="0.5"/>
+
+  <!-- Small decor: picture frame -->
+  <g transform="translate(120,160)">
+    <rect x="0" y="0" width="120" height="80" rx="6" fill="#fff" stroke="#dcd6d2" stroke-width="4" />
+    <rect x="12" y="12" width="96" height="56" rx="4" fill="#c9e7ff" />
   </g>
-  
-  <!-- Subtle atmospheric haze for depth -->
-  <rect width="1200" height="800" fill="url(#interiorLighting)" opacity="0.08"/>
-  
-  <!-- Fine texture overlay -->
-  <rect width="1200" height="800" fill="rgba(0, 0, 0, 0.05)"/>
+
+  <!-- Subtle vignette -->
+  <rect width="1200" height="800" fill="black" opacity="0.02" />
+
 </svg>
