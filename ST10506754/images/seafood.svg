@@ -1,4 +1,67 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
-  <rect width="100%" height="100%" fill="#f6f2ee"/>
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="48" fill="#c0392b">Seafood Platter</text>
+  <defs>
+    <linearGradient id="bgSeafood" x1="0" x2="1">
+      <stop offset="0%" stop-color="#f3e3c8"/>
+      <stop offset="50%" stop-color="#d8ba8c"/>
+      <stop offset="100%" stop-color="#8a5a3d"/>
+    </linearGradient>
+    <radialGradient id="plateGlow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#fffaf2"/>
+      <stop offset="62%" stop-color="#f1d7b2"/>
+      <stop offset="100%" stop-color="#d7b98e"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bgSeafood)"/>
+  <g opacity="0.18" stroke="#5a331d" stroke-width="2">
+    <path d="M70 120h1060M70 680h1060"/>
+    <path d="M120 70v660M1080 70v660"/>
+  </g>
+
+  <rect x="90" y="90" width="1020" height="620" rx="30" fill="rgba(92,57,31,0.16)" stroke="#6d4730" stroke-width="4"/>
+
+  <g transform="translate(0 20)">
+    <ellipse cx="600" cy="482" rx="330" ry="165" fill="#6d4229" opacity="0.35"/>
+    <ellipse cx="600" cy="430" rx="360" ry="210" fill="url(#plateGlow)" stroke="#8e6847" stroke-width="12"/>
+    <ellipse cx="600" cy="430" rx="285" ry="155" fill="#f7ead6" stroke="#cf9f61" stroke-width="10"/>
+
+    <g fill="#d57a4c" stroke="#7d3b2d" stroke-width="6">
+      <path d="M468 332c-58 20-82 82-58 122 18 31 64 35 85 8 30-39 19-92-27-130z"/>
+      <path d="M676 308c-42 8-70 52-63 102 7 54 62 79 98 54 33-23 43-80 16-117-22-30-31-40-51-39z"/>
+      <path d="M545 310c20 38 18 80-4 110-38 52-126 62-174 20-46-41-43-118 16-158 48-33 110-25 162 28z"/>
+      <path d="M782 356c40-12 84 8 110 47 29 43 19 104-32 130-52 28-119 7-142-54-18-46 14-100 64-123z"/>
+    </g>
+
+    <g fill="#cfc18e" stroke="#6a4d2b" stroke-width="5">
+      <ellipse cx="448" cy="430" rx="46" ry="24"/>
+      <ellipse cx="763" cy="405" rx="52" ry="28"/>
+      <ellipse cx="612" cy="492" rx="58" ry="26"/>
+      <ellipse cx="805" cy="522" rx="38" ry="20"/>
+    </g>
+
+    <g fill="#b2b35d" stroke="#4f5f2e" stroke-width="4">
+      <path d="M472 286c12-40 52-57 82-32 29 24 25 69-9 84-35 15-72-17-73-52z"/>
+      <path d="M710 278c18-36 68-46 98-16 30 30 22 75-14 94-43 22-98-9-84-78z"/>
+      <path d="M596 306c18-44 84-55 120-24 35 29 27 88-18 105-50 19-103-25-102-81z"/>
+    </g>
+
+    <g fill="#f0d24a" stroke="#b37729" stroke-width="4">
+      <circle cx="548" cy="470" r="18"/>
+      <circle cx="704" cy="498" r="19"/>
+      <circle cx="645" cy="548" r="17"/>
+      <circle cx="434" cy="528" r="16"/>
+    </g>
+
+    <g fill="#e7e1d8" stroke="#8d7257" stroke-width="5">
+      <path d="M465 520l23-16 20 18-15 25-31-5z"/>
+      <path d="M725 558l22-18 20 17-11 23-31-7z"/>
+      <path d="M610 568l19-13 18 12-11 23-29-8z"/>
+    </g>
+
+    <g fill="none" stroke="#5d3d2d" stroke-width="10" stroke-linecap="round">
+      <path d="M350 344c66 26 118 38 174 40"/>
+      <path d="M814 370c42 28 74 57 92 101"/>
+      <path d="M420 590c62-8 112-23 172-64"/>
+    </g>
+  </g>
 </svg>

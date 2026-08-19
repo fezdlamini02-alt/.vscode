@@ -1,4 +1,57 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
-  <rect width="100%" height="100%" fill="#f0f4ff"/>
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="48" fill="#234">Restaurant Interior</text>
+  <defs>
+    <linearGradient id="bgInterior" x1="0" x2="1">
+      <stop offset="0%" stop-color="#f4eadb"/>
+      <stop offset="50%" stop-color="#d7c3a7"/>
+      <stop offset="100%" stop-color="#8d6a4d"/>
+    </linearGradient>
+    <linearGradient id="woodTone" x1="0" x2="1">
+      <stop offset="0%" stop-color="#6a3d2a"/>
+      <stop offset="100%" stop-color="#2f1f18"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bgInterior)"/>
+  <g opacity="0.17" stroke="#5d4033" stroke-width="2">
+    <path d="M0 140h1200M0 660h1200"/>
+    <path d="M90 0v800M1110 0v800"/>
+  </g>
+
+  <rect x="40" y="68" width="1120" height="660" rx="26" fill="rgba(104,76,58,0.12)" stroke="#6d4b37" stroke-width="4"/>
+
+  <g>
+    <rect x="120" y="115" width="960" height="410" rx="18" fill="#d4c09d" stroke="#7a593c" stroke-width="8"/>
+
+    <g fill="#f0e5d4" stroke="#7a593c" stroke-width="8">
+      <rect x="178" y="170" width="180" height="286" rx="8"/>
+      <rect x="510" y="170" width="180" height="286" rx="8"/>
+      <rect x="842" y="170" width="180" height="286" rx="8"/>
+    </g>
+
+    <g fill="#b57a4d" stroke="#5d3d2d" stroke-width="6">
+      <path d="M146 185h908v26H146zM146 415h908v24H146z"/>
+    </g>
+
+    <g>
+      <rect x="220" y="530" width="760" height="78" rx="12" fill="url(#woodTone)" stroke="#3d2a20" stroke-width="6"/>
+      <rect x="300" y="490" width="120" height="76" rx="14" fill="#f0e3cd" stroke="#7c5e3e" stroke-width="5"/>
+      <rect x="544" y="490" width="120" height="76" rx="14" fill="#f0e3cd" stroke="#7c5e3e" stroke-width="5"/>
+      <rect x="788" y="490" width="120" height="76" rx="14" fill="#f0e3cd" stroke="#7c5e3e" stroke-width="5"/>
+    </g>
+
+    <g fill="#d4b06d" stroke="#7d5c34" stroke-width="5">
+      <circle cx="600" cy="110" r="22"/>
+      <path d="M600 74v32M600 150v32M566 110h68M534 100l66 54M666 100l-66 54"/>
+    </g>
+
+    <g fill="#c1a96d" stroke="#7a5e31" stroke-width="4">
+      <path d="M300 208l30-20 30 20v128h-60zM900 208l30-20 30 20v128h-60z"/>
+    </g>
+
+    <g fill="none" stroke="#6d4a36" stroke-width="10" stroke-linecap="round">
+      <path d="M180 640c148-60 330-95 514-81 168 13 270 46 308 82"/>
+      <path d="M220 455c90 40 162 60 245 56"/>
+      <path d="M632 516c76 14 155 12 251-26"/>
+    </g>
+  </g>
 </svg>

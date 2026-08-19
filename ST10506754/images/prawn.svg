@@ -1,4 +1,60 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
-  <rect width="100%" height="100%" fill="#fff6f0"/>
-  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="48" fill="#d35400">Prawn Curry</text>
+  <defs>
+    <linearGradient id="bgPrawn" x1="0" x2="1">
+      <stop offset="0%" stop-color="#e7d2ae"/>
+      <stop offset="50%" stop-color="#b7815f"/>
+      <stop offset="100%" stop-color="#593a2d"/>
+    </linearGradient>
+    <linearGradient id="soup" x1="0" x2="1">
+      <stop offset="0%" stop-color="#d9b75e"/>
+      <stop offset="50%" stop-color="#b17336"/>
+      <stop offset="100%" stop-color="#7e3f29"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bgPrawn)"/>
+  <g opacity="0.12" stroke="#402b20" stroke-width="2">
+    <path d="M55 115h1090M55 685h1090"/>
+    <path d="M115 70v660M1085 70v660"/>
+  </g>
+
+  <rect x="90" y="90" width="1020" height="620" rx="28" fill="rgba(79,47,33,0.15)" stroke="#734b38" stroke-width="4"/>
+
+  <g>
+    <ellipse cx="600" cy="560" rx="260" ry="90" fill="#603b2d" opacity="0.35"/>
+    <path d="M310 452c55-104 216-179 382-161 168 18 280 126 261 219-18 90-174 132-337 124-151-8-274-63-306-182z" fill="#efe1ca" stroke="#8c6a47" stroke-width="12"/>
+    <path d="M336 456c72-72 220-119 354-101 143 19 262 93 251 174-15 108-188 148-336 132-147-16-252-93-269-205z" fill="url(#soup)" stroke="#7d4a32" stroke-width="10"/>
+
+    <g fill="#d5b257" stroke="#7d5228" stroke-width="4">
+      <path d="M472 390c18-36 65-54 104-39 38 15 55 60 33 93-28 43-95 51-128 17-29-31-27-56-9-71z"/>
+      <path d="M711 390c15-28 58-43 91-27 35 17 47 59 23 90-31 42-97 46-129 18-25-22-20-50 15-81z"/>
+      <path d="M605 362c20-38 74-54 116-36 39 17 52 67 25 104-38 52-122 58-164 17-27-26-28-58 23-85z"/>
+    </g>
+
+    <g fill="#b7cd6a" stroke="#576d2d" stroke-width="4">
+      <path d="M469 322c21-46 78-59 120-30 37 26 38 73 4 102-39 34-106 28-123-19-8-20-4-34-1-53z"/>
+      <path d="M717 314c22-37 76-48 114-23 39 26 40 82 1 101-52 27-118 9-128-38-4-21 1-25 13-40z"/>
+    </g>
+
+    <g fill="#d06d36" stroke="#7d392a" stroke-width="5">
+      <path d="M495 459c-24-16-42-46-38-72 21-4 51 12 60 34 14 33-10 41-22 38z"/>
+      <path d="M644 452c22-18 36-48 31-71-19-6-49 8-61 34-21 47 6 52 30 37z"/>
+      <path d="M708 517c15-23 55-36 80-21 27 17 26 49 7 61-32 19-74 20-93 3-15-16-11-27 6-43z"/>
+      <path d="M405 515c-16-21-51-34-77-21-30 15-31 48-10 63 29 21 72 18 90 3 9-7 7-23-3-45z"/>
+    </g>
+
+    <g fill="#f2d29a" stroke="#8a6b46" stroke-width="4">
+      <circle cx="568" cy="484" r="19"/>
+      <circle cx="653" cy="501" r="17"/>
+      <circle cx="470" cy="524" r="15"/>
+      <circle cx="744" cy="487" r="16"/>
+    </g>
+
+    <g fill="none" stroke="#5b3a2a" stroke-width="10" stroke-linecap="round">
+      <path d="M420 601c91-11 160-16 232-9"/>
+      <path d="M645 593c47 19 91 31 146 34"/>
+      <path d="M468 306c43-29 87-42 133-41"/>
+      <path d="M701 310c38-27 72-33 112-24"/>
+    </g>
+  </g>
 </svg>
