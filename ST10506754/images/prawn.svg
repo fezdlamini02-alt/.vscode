@@ -101,5 +101,4 @@
   <ellipse cx="600" cy="450" rx="280" ry="120" fill="#4f392d" opacity="0.08"/>
   <ellipse cx="600" cy="374" rx="310" ry="96" fill="rgba(255,255,255,0.13)" opacity="0.5"/>
   <rect width="1200" height="800" fill="#000" opacity="0.05" filter="url(#grain)"/>
-  <image href="https://images.unsplash.com/photo-1562565652-a0d8f0c59eb4?auto=format&amp;fit=crop&amp;w=1200&amp;q=88" x="0" y="0" width="1200" height="800" preserveAspectRatio="xMidYMid slice" aria-label="Realistic prawn dish" />
 </svg>
