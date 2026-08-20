@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-labelledby="titleDesc">
-  <title id="titleDesc">Stylized interior scene with window, plant, lamp, chair and rug</title>
+  <title id="titleDesc">Photographic interior-backed illustration (local photo fallback)</title>
+
+  <!-- Background image: place ST10506754/images/photos/interior.jpg in the repo for this to display locally -->
+  <image href="photos/interior.jpg" x="0" y="0" width="1200" height="800" preserveAspectRatio="xMidYMid slice" />
+
   <defs>
-    <linearGradient id="wallGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#f6f9fc"/>
-      <stop offset="100%" stop-color="#e7eef6"/>
-    </linearGradient>
-    <linearGradient id="floorGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#e9d8c4"/>
-      <stop offset="100%" stop-color="#d4b79a"/>
-    </linearGradient>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#88d0ff"/>
-      <stop offset="100%" stop-color="#cfeaff"/>
-    </linearGradient>
     <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
       <stop offset="100%" stop-color="#bfe6ff" stop-opacity="0.15"/>
@@ -21,84 +13,21 @@
     <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
       <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#000" flood-opacity="0.12"/>
     </filter>
-    <clipPath id="windowClip">
-      <rect x="760" y="110" width="280" height="380" rx="8" ry="8"/>
-    </clipPath>
   </defs>
 
-  <!-- Background wall -->
-  <rect width="1200" height="520" y="0" fill="url(#wallGrad)" />
-  <!-- Floor -->
-  <rect width="1200" height="280" y="520" fill="url(#floorGrad)" />
+  <!-- Semi-transparent overlay to ensure legibility of foreground vector elements -->
+  <rect width="1200" height="800" fill="#ffffff" opacity="0.12" />
 
-  <!-- Window -->
+  <!-- Foreground vector accents (keeps the original illustrative feel on top of the photo) -->
+  <!-- Window frame highlight -->
   <g filter="url(#softShadow)">
-    <rect x="760" y="110" width="280" height="380" rx="8" ry="8" fill="#fff" stroke="#d0e6ff" stroke-width="6" />
-    <rect x="772" y="130" width="256" height="344" fill="url(#sky)" clip-path="url(#windowClip)"/>
-    <!-- window panes -->
-    <line x1="900" y1="130" x2="900" y2="474" stroke="#ffffff" stroke-opacity="0.4" stroke-width="3" />
-    <line x1="772" y1="312" x2="1028" y2="312" stroke="#ffffff" stroke-opacity="0.3" stroke-width="3" />
-    <!-- glass reflection -->
+    <rect x="760" y="110" width="280" height="380" rx="8" ry="8" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="6" />
     <path d="M792 150 C900 170 980 150 995 200" fill="none" stroke="url(#glass)" stroke-width="18" stroke-linecap="round" stroke-opacity="0.35"/>
   </g>
 
-  <!-- Sun beam from window -->
-  <path d="M820 150 L640 440 L640 520 L900 520 L900 380 Z" fill="#fff3b8" opacity="0.12" />
-
-  <!-- Rug -->
-  <ellipse cx="420" cy="640" rx="260" ry="70" fill="#ffefd5" stroke="#f2d7b0" stroke-width="2" />
-  <ellipse cx="420" cy="642" rx="180" ry="38" fill="#ffd6b8" opacity="0.5" />
-
-  <!-- Chair -->
-  <g transform="translate(300,520)">
-    <rect x="-40" y="-120" width="160" height="24" rx="8" fill="#6b4f3a" /> <!-- seat cushion front -->
-    <rect x="-30" y="-148" width="140" height="60" rx="14" fill="#8b6a52" /> <!-- backrest -->
-    <rect x="-48" y="-100" width="16" height="80" rx="4" fill="#5a3f2b" />
-    <rect x="116" y="-100" width="16" height="80" rx="4" fill="#5a3f2b" />
-    <rect x="0" y="-40" width="40" height="56" rx="8" transform="rotate(10 20  -12)" fill="#a47b60" opacity="0.9" />
-  </g>
-
-  <!-- Side table -->
-  <g transform="translate(500,540)">
-    <rect x="0" y="-60" width="80" height="60" rx="10" fill="#7a5a43" filter="url(#softShadow)" />
-    <rect x="10" y="-50" width="60" height="6" rx="3" fill="#e8d7c7" />
-    <!-- vase -->
-    <ellipse cx="20" cy="-56" rx="12" ry="6" fill="#f7f0ec" opacity="0.9" />
-    <rect x="12" y="-92" width="16" height="36" rx="8" fill="#e8b9b0" />
-  </g>
-
-  <!-- Plant -->
-  <g transform="translate(560,540)">
-    <ellipse cx="0" cy="-6" rx="46" ry="18" fill="#a27f54" />
-    <rect x="-40" y="-110" width="80" height="104" rx="12" fill="#caa27a" />
-    <!-- leaves -->
-    <path d="M-10 -56 C-60 -80 -20 -120 20 -100 C40 -90 36 -60 10 -52 C-2 -48 -6 -50 -10 -56Z" fill="#2f8f5a" />
-    <path d="M12 -30 C60 -60 40 -110 4 -84 C-8 -74 -6 -54 12 -30Z" fill="#3aa06a" opacity="0.95" />
-  </g>
-
-  <!-- Floorboard subtle lines -->
-  <g stroke="#d7b99a" stroke-width="2" opacity="0.3">
-    <line x1="0" y1="580" x2="1200" y2="580" />
-    <line x1="0" y1="620" x2="1200" y2="620" />
-    <line x1="0" y1="700" x2="1200" y2="700" />
-  </g>
-
-  <!-- Standing lamp -->
-  <g transform="translate(170,420)">
-    <rect x="18" y="-240" width="8" height="200" rx="4" fill="#4b3930" />
-    <ellipse cx="26" cy="-38" rx="30" ry="12" fill="#fde7b8" opacity="0.9" />
-    <path d="M-10 -240 Q26 -280 62 -240 L52 -216 Q26 -252 -10 -216 Z" fill="#ffdca8" opacity="0.95" />
-    <!-- light glow -->
-    <ellipse cx="26" cy="-20" rx="140" ry="80" fill="#fff2c2" opacity="0.08" />
-  </g>
-
-  <!-- Small decor: picture frame -->
-  <g transform="translate(120,160)">
-    <rect x="0" y="0" width="120" height="80" rx="6" fill="#fff" stroke="#dcd6d2" stroke-width="4" />
-    <rect x="12" y="12" width="96" height="56" rx="4" fill="#c9e7ff" />
-  </g>
-
   <!-- Subtle vignette -->
-  <rect width="1200" height="800" fill="black" opacity="0.02" />
+  <rect width="1200" height="800" fill="black" opacity="0.06" />
 
+  <!-- Accessibility: title + description -->
+  <desc>This SVG uses a local photographic background (photos/interior.jpg) when present; otherwise it provides a stylized overlay and decorations.</desc>
 </svg>
