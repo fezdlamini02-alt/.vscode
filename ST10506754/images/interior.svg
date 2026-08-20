@@ -30,4 +30,5 @@
 
   <!-- Accessibility: title + description -->
   <desc>This SVG uses a local photographic background (photos/interior.jpg) when present; otherwise it provides a stylized overlay and decorations.</desc>
+  <image href="interior.jpg" x="0" y="0" width="1200" height="800" preserveAspectRatio="xMidYMid slice" aria-label="Realistic restaurant interior" />
 </svg>

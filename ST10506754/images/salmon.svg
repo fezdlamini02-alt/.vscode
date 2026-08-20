@@ -47,4 +47,5 @@
     <path d="M70 460 C220 400 420 540 830 460" fill="none"/>
   </g>
 
+  <image href="salmon.jpg" x="0" y="0" width="1200" height="800" preserveAspectRatio="xMidYMid slice" aria-label="Realistic grilled salmon" />
 </svg>
