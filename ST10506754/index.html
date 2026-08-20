@@ -3,30 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home - Fahrenheit Seafood and Grill</title>
+  <title>Fahrenheit Seafood and Grill</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Fahrenheit Seafood and Grill</h1>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Fahrenheit Seafood and Grill home">
+      <span class="brand-mark">F</span>
+      <span>
+        <strong>Fahrenheit</strong>
+        <small>Seafood &amp; Grill</small>
+      </span>
+    </a>
     <nav role="navigation" aria-label="Main navigation">
       <a href="index.html" aria-current="page">Home</a> |
       <a href="about.html">About Us</a> |
-      <a href="services.html">Menu</a> |
+      <a href="menu.html">Menu</a> |
       <a href="gallery.html">Gallery</a> |
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <main id="main">
-    <h2>Welcome to Our Restaurant</h2>
-    <p>Fresh seafood, grilled to perfection, served in a warm and inviting atmosphere.</p>
+  <main id="main" class="home-page">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Edenvale since 2010</p>
+        <h1 id="hero-title">The sea,<br><em>served warm.</em></h1>
+        <p class="hero-text">Fresh seafood, open-flame flavour, and generous tables made for lingering.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="menu.html">Explore the menu <span aria-hidden="true">&rarr;</span></a>
+          <a class="button button-quiet" href="contact.html">Find your table</a>
+        </div>
+      </div>
+      <figure class="hero-image">
+        <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&amp;fit=crop&amp;w=1200&amp;q=88" alt="Grilled salmon with asparagus" width="1200" height="800">
+        <figcaption>Fire-kissed. Ocean-fresh.</figcaption>
+      </figure>
+    </section>
+
+    <section class="home-details" aria-label="Restaurant highlights">
+      <article>
+        <span class="detail-number">01</span>
+        <h2>From the coast</h2>
+        <p>Bright, honest seafood prepared with care and served without fuss.</p>
+      </article>
+      <article>
+        <span class="detail-number">02</span>
+        <h2>Over the flame</h2>
+        <p>Our grill brings depth, char, and a little theatre to every plate.</p>
+      </article>
+      <article>
+        <span class="detail-number">03</span>
+        <h2>At your table</h2>
+        <p>Come as you are. Stay for one more story, side, or glass of wine.</p>
+      </article>
+    </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 Fahrenheit Seafood and Grill. All rights reserved.</p>
-    <p>Email: info@fahrenheitseafood.co.za | Phone: +27 11 123 4567</p>
+    <p>&copy; 2026 Fahrenheit Seafood and Grill</p>
   </footer>
-  <!-- HOME PAGE -->
 </body>
 </html>

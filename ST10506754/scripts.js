@@ -6,7 +6,7 @@ function showStatus(message, ok = true) {
   const status = document.getElementById('form-status');
   if (!status) return;
   status.textContent = message;
-  status.style.color = ok ? '#0a0' : '#c00';
+  status.style.color = ok ? '#d7263d' : '#a7192d';
 }
 
 function buildMailto(form) {

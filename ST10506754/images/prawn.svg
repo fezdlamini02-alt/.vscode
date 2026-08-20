@@ -1,128 +1,104 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
   <defs>
-    <radialGradient id="bowlRealistic" cx="50%" cy="36%" r="60%">
-      <stop offset="0%" stop-color="#fffef9"/>
-      <stop offset="38%" stop-color="#faf6f0"/>
-      <stop offset="72%" stop-color="#f2ebe2"/>
-      <stop offset="100%" stop-color="#d9cbb5"/>
+    <radialGradient id="bowlRealistic" cx="48%" cy="32%" r="68%">
+      <stop offset="0%" stop-color="#fffefb"/>
+      <stop offset="30%" stop-color="#f7f2eb"/>
+      <stop offset="65%" stop-color="#efe7dc"/>
+      <stop offset="100%" stop-color="#d8c7b0"/>
     </radialGradient>
     <linearGradient id="curryReal" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#d8982d" opacity="0.92"/>
-      <stop offset="35%" stop-color="#c08125"/>
-      <stop offset="65%" stop-color="#a8621b"/>
-      <stop offset="100%" stop-color="#704a0f" opacity="0.98"/>
+      <stop offset="0%" stop-color="#d79a39"/>
+      <stop offset="20%" stop-color="#cb8c2b"/>
+      <stop offset="42%" stop-color="#b56d1f"/>
+      <stop offset="70%" stop-color="#8f5416"/>
+      <stop offset="100%" stop-color="#5e370d"/>
     </linearGradient>
     <linearGradient id="prawnShrimp" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#e85a3a"/>
-      <stop offset="28%" stop-color="#d84a2a"/>
-      <stop offset="62%" stop-color="#c83a1a"/>
-      <stop offset="100%" stop-color="#a8281a"/>
+      <stop offset="0%" stop-color="#ff8d62"/>
+      <stop offset="26%" stop-color="#ef6d47"/>
+      <stop offset="60%" stop-color="#d8562e"/>
+      <stop offset="100%" stop-color="#a22d1c"/>
     </linearGradient>
     <filter id="curryDepth">
-      <feDropShadow dx="0" dy="22" stdDeviation="16" flood-opacity="0.52" flood-color="#1a1410"/>
+      <feDropShadow dx="0" dy="20" stdDeviation="16" flood-opacity="0.5" flood-color="#150d09"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="13"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.09"/>
+      </feComponentTransfer>
     </filter>
   </defs>
 
-  <!-- Professional food photography setting -->
   <rect width="1200" height="800" fill="#faf6f0"/>
 
-  <!-- Bowl cast shadow -->
-  <ellipse cx="600" cy="540" rx="380" ry="150" fill="#3a2a1a" opacity="0.32"/>
-  <ellipse cx="600" cy="535" rx="360" ry="125" fill="#5a4a3a" opacity="0.16"/>
+  <ellipse cx="600" cy="544" rx="390" ry="155" fill="#34271d" opacity="0.28"/>
+  <ellipse cx="600" cy="535" rx="358" ry="128" fill="#5d4b3d" opacity="0.12"/>
 
-  <!-- Premium ceramic bowl -->
-  <ellipse cx="600" cy="380" rx="330" ry="200" fill="#fffef9" stroke="#e5d7c3" stroke-width="6"/>
-  <ellipse cx="600" cy="380" rx="322" ry="192" fill="url(#bowlRealistic)"/>
-  
-  <!-- Bowl rim highlight -->
-  <ellipse cx="600" cy="380" rx="330" ry="200" fill="none" stroke="#f0e8dc" stroke-width="14" opacity="0.38"/>
-  <ellipse cx="600" cy="360" rx="330" ry="110" fill="rgba(255, 255, 255, 0.16)" opacity="0.45"/>
+  <ellipse cx="600" cy="380" rx="334" ry="202" fill="#fffef9" stroke="#e5d7c3" stroke-width="6"/>
+  <ellipse cx="600" cy="380" rx="325" ry="194" fill="url(#bowlRealistic)"/>
+  <ellipse cx="600" cy="380" rx="334" ry="202" fill="none" stroke="#f0e8dc" stroke-width="14" opacity="0.4"/>
 
-  <!-- Aromatic curry sauce -->
   <g filter="url(#curryDepth)">
-    <ellipse cx="600" cy="410" rx="300" ry="170" fill="url(#curryReal)" opacity="0.90"/>
-    
-    <!-- Curry sauce surface variation -->
-    <ellipse cx="600" cy="400" rx="290" ry="160" fill="#b8712a" opacity="0.22"/>
-    
-    <!-- Subtle sauce ripples -->
-    <path d="M330 380Q600 350 870 380T600 480" fill="none" stroke="#8b5a1f" stroke-width="2.5" opacity="0.25"/>
-    <path d="M350 420Q600 400 850 420" fill="none" stroke="#9a6a2f" stroke-width="1.8" opacity="0.18"/>
+    <ellipse cx="600" cy="410" rx="300" ry="170" fill="url(#curryReal)" opacity="0.96"/>
+    <ellipse cx="600" cy="402" rx="286" ry="160" fill="#bf7b28" opacity="0.18"/>
+    <path d="M330 382Q600 354 870 382T600 480" fill="none" stroke="#8d6024" stroke-width="2.6" opacity="0.24"/>
+    <path d="M350 420Q600 401 850 420" fill="none" stroke="#a36d2f" stroke-width="2" opacity="0.2"/>
+    <path d="M380 470Q600 444 820 474" fill="none" stroke="#6d4417" stroke-width="3" opacity="0.18"/>
   </g>
 
-  <!-- Realistic prawns submerged in curry -->
   <g filter="url(#curryDepth)">
-    <!-- Prawn 1 - top left, partially visible -->
-    <ellipse cx="410" cy="310" rx="62" ry="38" fill="url(#prawnShrimp)" opacity="0.93"/>
-    <path d="M410 280c-42 0-52 16-46 36 6 20 32 24 46 24s40-4 46-24c6-20-4-36-46-36" 
-          fill="#f07a5a" opacity="0.75"/>
-    <!-- Prawn texture -->
-    <path d="M395 320Q410 305 425 320" fill="none" stroke="#a8281a" stroke-width="2.2" opacity="0.4"/>
-    <!-- Prawn legs -->
-    <g stroke="#c83a1a" stroke-width="2.8" opacity="0.65" stroke-linecap="round">
-      <line x1="368" y1="330" x2="345" y2="375"/>
-      <line x1="382" y1="340" x2="360" y2="390"/>
-      <line x1="438" y1="340" x2="460" y2="390"/>
-      <line x1="452" y1="330" x2="475" y2="375"/>
+    <ellipse cx="410" cy="308" rx="63" ry="38" fill="url(#prawnShrimp)" opacity="0.95"/>
+    <path d="M410 280c-42 0-53 16-46 36 7 20 33 25 46 25s40-4 46-24c6-20-4-37-46-37" fill="#f39d7d" opacity="0.72"/>
+    <path d="M395 318Q410 304 425 318" fill="none" stroke="#a42d1d" stroke-width="2.3" opacity="0.42"/>
+    <g stroke="#c84e2d" stroke-width="2.8" opacity="0.66" stroke-linecap="round">
+      <line x1="367" y1="332" x2="343" y2="374"/>
+      <line x1="380" y1="341" x2="357" y2="392"/>
+      <line x1="440" y1="341" x2="462" y2="390"/>
+      <line x1="453" y1="331" x2="475" y2="375"/>
     </g>
-    
-    <!-- Prawn 2 - center top -->
-    <ellipse cx="720" cy="295" rx="68" ry="42" fill="url(#prawnShrimp)" opacity="0.93"/>
-    <path d="M720 257c-48 0-58 18-50 42 8 24 38 28 50 28s42-4 50-28c8-24-2-42-50-42" 
-          fill="#f07a5a" opacity="0.75"/>
-    <path d="M702 315Q720 295 738 315" fill="none" stroke="#a8281a" stroke-width="2.5" opacity="0.4"/>
-    <g stroke="#c83a1a" stroke-width="3" opacity="0.65" stroke-linecap="round">
-      <line x1="670" y1="310" x2="640" y2="360"/>
-      <line x1="688" y1="325" x2="660" y2="385"/>
-      <line x1="752" y1="325" x2="780" y2="385"/>
-      <line x1="770" y1="310" x2="800" y2="360"/>
+
+    <ellipse cx="720" cy="296" rx="69" ry="43" fill="url(#prawnShrimp)" opacity="0.95"/>
+    <path d="M720 257c-49 0-59 18-51 42 8 24 39 29 51 29s43-4 51-29c8-24-2-42-51-42" fill="#f39d7d" opacity="0.72"/>
+    <path d="M702 316Q720 296 738 316" fill="none" stroke="#a42d1d" stroke-width="2.5" opacity="0.44"/>
+    <g stroke="#c84e2d" stroke-width="3" opacity="0.66" stroke-linecap="round">
+      <line x1="668" y1="311" x2="638" y2="360"/>
+      <line x1="687" y1="326" x2="660" y2="385"/>
+      <line x1="753" y1="326" x2="780" y2="385"/>
+      <line x1="771" y1="310" x2="800" y2="360"/>
     </g>
-    
-    <!-- Prawn 3 - left middle -->
-    <ellipse cx="485" cy="420" rx="60" ry="36" fill="url(#prawnShrimp)" opacity="0.88"/>
-    <path d="M485 395c-40 0-50 14-44 32 6 18 30 22 44 22s38-4 44-22c6-18-4-32-44-32" 
-          fill="#f07a5a" opacity="0.72"/>
-    <g stroke="#c83a1a" stroke-width="2.5" opacity="0.6" stroke-linecap="round">
-      <line x1="445" y1="435" x2="420" y2="480"/>
-      <line x1="460" y1="445" x2="435" y2="495"/>
+
+    <ellipse cx="485" cy="420" rx="60" ry="36" fill="url(#prawnShrimp)" opacity="0.9"/>
+    <path d="M485 394c-39 0-50 13-44 31 6 18 30 22 44 22s38-4 44-22c6-18-4-31-44-31" fill="#f39d7d" opacity="0.72"/>
+    <g stroke="#c84e2d" stroke-width="2.5" opacity="0.62" stroke-linecap="round">
+      <line x1="445" y1="436" x2="420" y2="480"/>
+      <line x1="460" y1="446" x2="435" y2="494"/>
     </g>
-    
-    <!-- Prawn 4 - center lower -->
-    <ellipse cx="655" cy="475" rx="56" ry="34" fill="url(#prawnShrimp)" opacity="0.85"/>
-    <path d="M655 453c-38 0-48 13-42 30 6 17 28 20 42 20s36-3 42-20c6-17-4-30-42-30" 
-          fill="#f07a5a" opacity="0.70"/>
-    <path d="M642 485Q655 472 668 485" fill="none" stroke="#a8281a" stroke-width="2" opacity="0.35"/>
-    
-    <!-- Prawn 5 - right side -->
-    <ellipse cx="800" cy="390" rx="58" ry="35" fill="url(#prawnShrimp)" opacity="0.88"/>
-    <path d="M800 368c-40 0-50 14-44 31 6 17 30 21 44 21s38-4 44-21c6-17-4-31-44-31" 
-          fill="#f07a5a" opacity="0.72"/>
-    <g stroke="#c83a1a" stroke-width="2.5" opacity="0.6" stroke-linecap="round">
-      <line x1="760" y1="405" x2="735" y2="450"/>
-      <line x1="840" y1="405" x2="865" y2="450"/>
+
+    <ellipse cx="655" cy="474" rx="56" ry="35" fill="url(#prawnShrimp)" opacity="0.88"/>
+    <path d="M655 453c-37 0-48 13-42 29 6 17 28 20 42 20s36-3 42-20c6-16-5-29-42-29" fill="#f39d7d" opacity="0.7"/>
+    <path d="M643 484Q656 472 668 484" fill="none" stroke="#a42d1d" stroke-width="2.1" opacity="0.35"/>
+
+    <ellipse cx="800" cy="390" rx="58" ry="35" fill="url(#prawnShrimp)" opacity="0.9"/>
+    <path d="M800 368c-39 0-50 13-44 31 6 17 30 21 44 21s38-4 44-21c6-18-5-31-44-31" fill="#f39d7d" opacity="0.7"/>
+    <g stroke="#c84e2d" stroke-width="2.5" opacity="0.62" stroke-linecap="round">
+      <line x1="759" y1="405" x2="734" y2="448"/>
+      <line x1="840" y1="405" x2="865" y2="448"/>
     </g>
   </g>
 
-  <!-- Fresh cilantro garnish -->
   <g filter="url(#curryDepth)">
-    <path d="M370 330c8-26 22-20 32 4 10 24 0 44-12 46-12 2-30-14-34-32-4-20 8-32 14-18" 
-          fill="#2d5a1a" opacity="0.86"/>
-    <path d="M800 310c9-24 24-18 34 2 10 20 2 42-10 44-12 2-32-12-36-28-4-18 6-30 12-18" 
-          fill="#2d5a1a" opacity="0.82"/>
+    <path d="M370 328c9-27 23-20 33 4 10 24 0 44-12 46-12 2-29-14-34-32-4-20 8-31 13-18" fill="#2e5d1d" opacity="0.82"/>
+    <path d="M800 311c9-23 24-18 34 2 10 20 2 42-10 44-12 2-32-12-36-28-4-18 6-30 12-18" fill="#2e5d1d" opacity="0.8"/>
   </g>
 
-  <!-- Rice on the side (subtle) -->
-  <g opacity="0.25" filter="url(#curryDepth)">
-    <ellipse cx="200" cy="440" rx="85" ry="70" fill="#fffacd"/>
-    <ellipse cx="200" cy="435" rx="75" ry="60" fill="#fffff0" opacity="0.6"/>
+  <g opacity="0.3" filter="url(#curryDepth)">
+    <ellipse cx="201" cy="440" rx="88" ry="72" fill="#fff9d4"/>
+    <ellipse cx="201" cy="435" rx="74" ry="58" fill="#fffef1" opacity="0.62"/>
   </g>
 
-  <!-- Bowl interior shadow for depth -->
-  <ellipse cx="600" cy="450" rx="280" ry="120" fill="#4a3a2a" opacity="0.08"/>
-
-  <!-- Surface sheen reflection -->
-  <ellipse cx="600" cy="375" rx="310" ry="95" fill="rgba(255, 255, 255, 0.12)" opacity="0.48"/>
-
-  <!-- Professional atmospheric overlay -->
-  <rect width="1200" height="800" fill="rgba(0, 0, 0, 0.06)"/>
+  <ellipse cx="600" cy="450" rx="280" ry="120" fill="#4f392d" opacity="0.08"/>
+  <ellipse cx="600" cy="374" rx="310" ry="96" fill="rgba(255,255,255,0.13)" opacity="0.5"/>
+  <rect width="1200" height="800" fill="#000" opacity="0.05" filter="url(#grain)"/>
 </svg>

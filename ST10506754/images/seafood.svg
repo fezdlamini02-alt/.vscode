@@ -1,68 +1,59 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
   <defs>
-    <radialGradient id="plateReflection" cx="45%" cy="35%" r="55%">
-      <stop offset="0%" stop-color="#fffdf9"/>
-      <stop offset="40%" stop-color="#f8f3eb"/>
-      <stop offset="75%" stop-color="#f0e8dd"/>
-      <stop offset="100%" stop-color="#d9c9b0"/>
+    <radialGradient id="plateReflection" cx="46%" cy="34%" r="62%">
+      <stop offset="0%" stop-color="#fffdfb"/>
+      <stop offset="34%" stop-color="#f8f1e9"/>
+      <stop offset="72%" stop-color="#efe4d3"/>
+      <stop offset="100%" stop-color="#d9c7af"/>
     </radialGradient>
     <linearGradient id="shrimpGradient" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#ff7a4d"/>
-      <stop offset="30%" stop-color="#e86a3d"/>
-      <stop offset="60%" stop-color="#d55a2d"/>
+      <stop offset="0%" stop-color="#ff8a5c"/>
+      <stop offset="24%" stop-color="#ee6c46"/>
+      <stop offset="58%" stop-color="#d75a31"/>
       <stop offset="100%" stop-color="#a8432a"/>
     </linearGradient>
     <linearGradient id="musselShell" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#2a1f18"/>
-      <stop offset="50%" stop-color="#3d2f24"/>
+      <stop offset="0%" stop-color="#2b1d17"/>
+      <stop offset="52%" stop-color="#3e2f26"/>
       <stop offset="100%" stop-color="#1a1410"/>
     </linearGradient>
     <filter id="plateDepth">
-      <feDropShadow dx="0" dy="15" stdDeviation="10" flood-opacity="0.4" flood-color="#2a1f18"/>
+      <feDropShadow dx="0" dy="16" stdDeviation="12" flood-opacity="0.42" flood-color="#2a1f18"/>
     </filter>
-    <filter id="foodShine">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="0.8"/>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="17"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.08"/>
+      </feComponentTransfer>
     </filter>
   </defs>
-  
-  <!-- Ambient background -->
+
   <rect width="1200" height="800" fill="#f9f4ed"/>
-  
-  <!-- Plate base shadow -->
-  <ellipse cx="600" cy="500" rx="340" ry="120" fill="#5a4a3a" opacity="0.25"/>
-  
-  <!-- Ceramic plate with restaurant finish -->
+  <ellipse cx="600" cy="500" rx="340" ry="120" fill="#5c4a3a" opacity="0.2"/>
+
   <circle cx="600" cy="380" r="300" fill="#fffdf9" stroke="#e8dcc9" stroke-width="4"/>
   <circle cx="600" cy="380" r="295" fill="url(#plateReflection)"/>
-  
-  <!-- Plate rim detail -->
-  <circle cx="600" cy="380" r="300" fill="none" stroke="#d4c4b0" stroke-width="10" opacity="0.6"/>
-  <ellipse cx="600" cy="380" rx="300" ry="100" fill="url(#plateReflection)" opacity="0.15"/>
-  
-  <!-- Fresh, glistening shrimp arranged professionally -->
+  <circle cx="600" cy="380" r="300" fill="none" stroke="#d9c9b3" stroke-width="10" opacity="0.58"/>
+  <ellipse cx="600" cy="380" rx="300" ry="100" fill="rgba(255,255,255,0.18)" opacity="0.22"/>
+
   <g filter="url(#plateDepth)">
-    <!-- Shrimp 1 - top left, cooked pink -->
     <ellipse cx="420" cy="300" rx="70" ry="40" fill="url(#shrimpGradient)"/>
-    <path d="M420 270c-45 0-55 15-48 35 7 20 35 25 48 25s41-5 48-25c7-20-3-35-48-35" 
-          fill="#ff9a6d" opacity="0.7"/>
-    <!-- Shrimp body detail -->
-    <path d="M400 310Q420 295 440 310" fill="none" stroke="#a8432a" stroke-width="2" opacity="0.5"/>
-    <!-- Antennae and legs -->
-    <g stroke="#d55a2d" stroke-width="2.5" opacity="0.6" stroke-linecap="round">
+    <path d="M420 270c-45 0-55 15-48 35 7 20 35 25 48 25s41-5 48-25c7-20-3-35-48-35" fill="#ff9d74" opacity="0.72"/>
+    <path d="M400 310Q420 294 440 310" fill="none" stroke="#a8432a" stroke-width="2" opacity="0.5"/>
+    <g stroke="#d55a2d" stroke-width="2.6" opacity="0.6" stroke-linecap="round">
       <path d="M375 290L350 270"/>
       <path d="M465 290L490 270"/>
       <line x1="390" y1="330" x2="370" y2="365"/>
-      <line x1="405" y1="335" x2="390" y2="375"/>
-      <line x1="435" y1="335" x2="450" y2="375"/>
+      <line x1="405" y1="335" x2="390" y2="374"/>
+      <line x1="435" y1="335" x2="450" y2="374"/>
       <line x1="450" y1="330" x2="470" y2="365"/>
     </g>
-    
-    <!-- Shrimp 2 - center top, beautiful cooked color -->
+
     <ellipse cx="740" cy="280" rx="75" ry="45" fill="url(#shrimpGradient)"/>
-    <path d="M740 245c-50 0-60 17-52 40 8 23 40 28 52 28s44-5 52-28c8-23-2-40-52-40" 
-          fill="#ff9a6d" opacity="0.7"/>
+    <path d="M740 245c-50 0-60 17-52 40 8 23 40 28 52 28s44-5 52-28c8-23-2-40-52-40" fill="#ff9d74" opacity="0.72"/>
     <path d="M720 295Q740 275 760 295" fill="none" stroke="#a8432a" stroke-width="2.5" opacity="0.5"/>
-    <g stroke="#d55a2d" stroke-width="2.5" opacity="0.6" stroke-linecap="round">
+    <g stroke="#d55a2d" stroke-width="2.6" opacity="0.6" stroke-linecap="round">
       <path d="M688 260L660 235"/>
       <path d="M792 260L820 235"/>
       <line x1="705" y1="310" x2="680" y2="355"/>
@@ -70,27 +61,21 @@
       <line x1="755" y1="320" x2="770" y2="370"/>
       <line x1="775" y1="310" x2="800" y2="355"/>
     </g>
-    
-    <!-- Scallop - left side -->
+
     <circle cx="380" cy="420" r="38" fill="#f5dcc8"/>
     <circle cx="380" cy="420" r="34" fill="#f0d0b8" opacity="0.9"/>
-    <!-- Scallop ridges -->
-    <g stroke="#d9b896" stroke-width="1.5" opacity="0.4">
+    <g stroke="#d9b896" stroke-width="1.5" opacity="0.42">
       <path d="M360 400Q380 385 400 400"/>
       <path d="M355 415Q380 410 405 415"/>
       <path d="M360 430Q380 435 400 430"/>
     </g>
-    
-    <!-- Mussel - dark shell -->
+
     <ellipse cx="510" cy="380" rx="35" ry="42" fill="url(#musselShell)"/>
-    <path d="M510 350c-20 0-25 12-22 25 3 13 15 16 22 16s19-3 22-16c3-13-2-25-22-25" 
-          fill="#4a3a2a" opacity="0.6"/>
-    <path d="M510 370L485 385L535 385Z" fill="#2a1f18" opacity="0.4"/>
-    
-    <!-- Shrimp 3 - lower center -->
+    <path d="M510 350c-20 0-25 12-22 25 3 13 15 16 22 16s19-3 22-16c3-13-2-25-22-25" fill="#4a3a2a" opacity="0.6"/>
+    <path d="M510 370L485 385L535 385Z" fill="#2a1f18" opacity="0.45"/>
+
     <ellipse cx="620" cy="480" rx="68" ry="38" fill="url(#shrimpGradient)"/>
-    <path d="M620 455c-42 0-52 14-46 33 6 19 32 24 46 24s40-5 46-24c6-19-4-33-46-33" 
-          fill="#ff9a6d" opacity="0.7"/>
+    <path d="M620 455c-42 0-52 14-46 33 6 19 32 24 46 24s40-5 46-24c6-19-4-33-46-33" fill="#ff9d74" opacity="0.72"/>
     <path d="M605 490Q620 475 635 490" fill="none" stroke="#a8432a" stroke-width="2" opacity="0.5"/>
     <g stroke="#d55a2d" stroke-width="2" opacity="0.6" stroke-linecap="round">
       <line x1="580" y1="465" x2="560" y2="440"/>
@@ -98,36 +83,28 @@
       <line x1="595" y1="510" x2="575" y2="555"/>
       <line x1="645" y1="510" x2="665" y2="555"/>
     </g>
-    
-    <!-- Clam or scallop - right side -->
+
     <circle cx="820" cy="430" r="40" fill="#f5dcc8"/>
     <circle cx="820" cy="430" r="36" fill="#f0d0b8" opacity="0.9"/>
-    <path d="M810 400L820 415L830 400Z" fill="#d9b896" opacity="0.3"/>
+    <path d="M810 400L820 415L830 400Z" fill="#d9b896" opacity="0.32"/>
   </g>
-  
-  <!-- Garnish - fresh lemon -->
+
   <g filter="url(#plateDepth)">
     <circle cx="500" cy="500" r="28" fill="#ffd93d"/>
     <circle cx="500" cy="500" r="25" fill="#ffea59"/>
-    <g stroke="#e6b800" stroke-width="1.5" opacity="0.5">
+    <g stroke="#e6b800" stroke-width="1.5" opacity="0.52">
       <line x1="500" y1="472" x2="500" y2="528"/>
       <line x1="472" y1="500" x2="528" y2="500"/>
       <line x1="478" y1="478" x2="522" y2="522"/>
       <line x1="522" y1="478" x2="478" y2="522"/>
     </g>
   </g>
-  
-  <!-- Fresh herbs - parsley -->
+
   <g filter="url(#plateDepth)">
-    <path d="M750 520c8-22 20-15 28 3 8 18 2 35-8 36-10 1-22-8-25-22-3-18 5-25 5-17" 
-          fill="#2d5c1a" opacity="0.8"/>
-    <path d="M680 380c6-18 16-12 22 2 6 14 0 28-8 29-8 1-18-8-20-18-2-14 2-20 6-13" 
-          fill="#2d5c1a" opacity="0.75"/>
+    <path d="M750 520c8-22 20-15 28 3 8 18 2 35-8 36-10 1-22-8-25-22-3-18 5-25 5-17" fill="#2d5c1a" opacity="0.8"/>
+    <path d="M680 380c6-18 16-12 22 2 6 14 0 28-8 29-8 1-18-8-20-18-2-14 2-20 6-13" fill="#2d5c1a" opacity="0.75"/>
   </g>
-  
-  <!-- Liquid/sauce reflections -->
-  <ellipse cx="600" cy="400" rx="280" ry="90" fill="rgba(255, 255, 255, 0.08)" opacity="0.4"/>
-  
-  <!-- Atmospheric subtle overlay -->
-  <rect width="1200" height="800" fill="rgba(0, 0, 0, 0.03)"/>
+
+  <ellipse cx="600" cy="400" rx="280" ry="92" fill="rgba(255,255,255,0.08)" opacity="0.4"/>
+  <rect width="1200" height="800" fill="#000" opacity="0.03" filter="url(#grain)"/>
 </svg>
